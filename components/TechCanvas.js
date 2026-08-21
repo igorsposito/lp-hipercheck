@@ -32,19 +32,36 @@ export default function TechCanvas() {
       'INFOBUSCA',
     ];
 
+    // Controle de Opacidade do Canvas Inteiro
+    let globalOpacity = 0;
+    let idleTimer = null;
+    let isMouseActive = false;
+
     const mouse = {
       x: null,
       y: null,
-      radius: 170,
+      radius: 180,
+    };
+
+    // Reset do Timer de Inatividade (3 segundos)
+    const resetIdleTimer = () => {
+      isMouseActive = true;
+      if (idleTimer) clearTimeout(idleTimer);
+
+      idleTimer = setTimeout(() => {
+        isMouseActive = false; // Após 3s sem mexer, ativa o desaparecimento
+      }, 3000);
     };
 
     const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
+      resetIdleTimer();
     };
 
     const handleMouseLeave = () => {
+      isMouseActive = false;
       mouse.x = null;
       mouse.y = null;
     };
@@ -52,8 +69,7 @@ export default function TechCanvas() {
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
-    // Aumentamos levemente para 60 partículas
-    const particleCount = 60;
+    const particleCount = 55;
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -66,28 +82,42 @@ export default function TechCanvas() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Definição da área cega do Título (Centro superior)
+      // Transição suave de Opacidade (Fade In ao mexer, Fade Out após 3s)
+      if (isMouseActive) {
+        if (globalOpacity < 1) globalOpacity += 0.04; // Aparece suavemente
+      } else {
+        if (globalOpacity > 0) globalOpacity -= 0.02; // Esmaece suavemente
+      }
+
+      // Se estiver totalmente invisível, pula a renderização para economizar processamento
+      if (globalOpacity <= 0) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
+      }
+
+      // Aplica a opacidade global da animação
+      ctx.globalAlpha = globalOpacity;
+
       const titleAvoidZone = {
-        minX: canvas.width * 0.2,  // 20% da largura
-        maxX: canvas.width * 0.8,  // 80% da largura
-        minY: 0,                   // Topo da seção
-        maxY: 200,                 // Até 200px de altura (cobre badge, título e subtítulo)
+        minX: canvas.width * 0.2,
+        maxX: canvas.width * 0.8,
+        minY: 0,
+        maxY: 200,
       };
 
       // 1. REPULSÃO ENTRE PARTÍCULAS E DA ÁREA DO TÍTULO
       for (let i = 0; i < particles.length; i++) {
-        // Empurra a partícula se ela entrar na área do título
         if (
           particles[i].x > titleAvoidZone.minX &&
           particles[i].x < titleAvoidZone.maxX &&
           particles[i].y > titleAvoidZone.minY &&
           particles[i].y < titleAvoidZone.maxY
         ) {
-          particles[i].vy = Math.abs(particles[i].vy); // Força a descer
+          particles[i].vy = Math.abs(particles[i].vy);
           if (particles[i].x < canvas.width / 2) {
-            particles[i].vx = -Math.abs(particles[i].vx); // Empurra pra esquerda
+            particles[i].vx = -Math.abs(particles[i].vx);
           } else {
-            particles[i].vx = Math.abs(particles[i].vx); // Empurra pra direita
+            particles[i].vx = Math.abs(particles[i].vx);
           }
         }
 
@@ -95,7 +125,7 @@ export default function TechCanvas() {
           const dx = particles[j].x - particles[i].x;
           const dy = particles[j].y - particles[i].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const minDist = 32;
+          const minDist = 35;
 
           if (dist < minDist && dist > 0) {
             const overlap = (minDist - dist) / 2;
@@ -108,7 +138,6 @@ export default function TechCanvas() {
             particles[j].y += ny * overlap * 0.5;
           }
 
-          // Linhas finas azuis conectando os nós de fundo
           if (dist < 125) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -122,7 +151,7 @@ export default function TechCanvas() {
         }
       }
 
-      // 2. ATRAÇÃO MAGNÉTICA DO MOUSE + SELEÇÃO DA PARTÍCULA MAIS PRÓXIMA
+      // 2. ATRAÇÃO MAGNÉTICA DO MOUSE + EXIBIÇÃO DA PALAVRA MAIS PRÓXIMA
       let closestParticle = null;
       let minMouseDist = Infinity;
 
@@ -138,7 +167,6 @@ export default function TechCanvas() {
               closestParticle = p;
             }
 
-            // Conexão rosa
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
@@ -147,7 +175,6 @@ export default function TechCanvas() {
             ctx.lineWidth = 1.2;
             ctx.stroke();
 
-            // Atração do ímã
             const force = (mouse.radius - dist) / mouse.radius;
             const angle = Math.atan2(dy, dx);
             p.x += Math.cos(angle) * force * 1.6;
@@ -155,7 +182,6 @@ export default function TechCanvas() {
           }
         });
 
-        // Desenha o texto apenas da partícula mais próxima do mouse
         if (closestParticle) {
           const alpha = (1 - minMouseDist / mouse.radius) * 0.9;
           ctx.font = '600 11px monospace';
@@ -178,6 +204,9 @@ export default function TechCanvas() {
         ctx.fill();
       });
 
+      // Restaura a opacidade para não afetar outros ciclos
+      ctx.globalAlpha = 1;
+
       animationFrameId = requestAnimationFrame(draw);
     };
 
@@ -187,6 +216,7 @@ export default function TechCanvas() {
       window.removeEventListener('resize', resize);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      if (idleTimer) clearTimeout(idleTimer);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

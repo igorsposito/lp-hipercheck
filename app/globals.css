@@ -508,6 +508,25 @@ body {
 .card-link:hover {
   color: var(--color-purple);
 }
+
+/* PALAVRA DINÂMICA DO TÍTULO DE SOLUÇÕES */
+.dynamic-word {
+  color: var(--color-pink, #E80070);
+  display: inline-block;
+  font-weight: 800;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dynamic-word.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dynamic-word.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
 /* BOTÃO FLUTUANTE WHATSAPP (CIRCULAR) */
 .whatsapp-float {
   position: fixed;

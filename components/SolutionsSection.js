@@ -1,9 +1,28 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import TechCanvas from './TechCanvas';
 
 export default function SolutionsSection() {
   const whatsappNumber = '5577998381190';
+
+  // Verbos de ação para o loop dinâmico
+  const words = ['impulsionar', 'proteger', 'escalar', 'blindar', 'acelerar'];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); // Inicia o efeito de saída (fade out)
+      
+      setTimeout(() => {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setFade(true); // Entra a nova palavra (fade in)
+      }, 300); // Tempo do fade
+    }, 2800); // Troca a cada 2.8 segundos
+
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   const solutions = [
     {
@@ -84,7 +103,13 @@ export default function SolutionsSection() {
       <div className="solutions-container">
         <div className="section-header">
           <span className="badge">Nossas Soluções</span>
-          <h2>Inteligência de crédito e dados Serasa Experian para o seu negócio</h2>
+          <h2>
+            Inteligência de crédito e dados Serasa Experian para{' '}
+            <span className={`dynamic-word ${fade ? 'fade-in' : 'fade-out'}`}>
+              {words[currentWordIndex]}
+            </span>{' '}
+            o seu negócio
+          </h2>
           <p>Da análise inicial ao monitoramento contínuo: ferramentas completas para conceder crédito com segurança e recuperar valores em atraso.</p>
         </div>
 
