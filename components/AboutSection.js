@@ -3,6 +3,7 @@ import Link from 'next/link';
 export default function AboutSection() {
   return (
     <section id="sobre" className="about-section">
+      <div className="about-dots-pattern" aria-hidden="true"></div>
       <div className="about-container">
         <div className="about-text">
           <span className="badge-about reveal">Conheça a Hiper Check</span>
@@ -14,7 +15,7 @@ export default function AboutSection() {
             Nosso compromisso é entregar agilidade, transparência e segurança para impulsionar o crescimento sustentável da sua empresa.
           </p>
           <div className="about-actions reveal reveal-delay-3">
-            <Link href="/sobre" className="btn-about">
+            <Link href="/sobre-nos" className="btn-about">
               Saiba mais sobre nós
             </Link>
           </div>
