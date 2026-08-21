@@ -1,0 +1,8 @@
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 768px) {
+  .cookie-banner {
+    bottom: 90px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+  }
+}

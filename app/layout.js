@@ -1,8 +1,10 @@
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import './responsive.css';
 import Navbar from '../components/Navbar';
 import WhatsappButton from '../components/WhatsappButton';
 import StickyActionBar from '../components/StickyActionBar';
+import CookieBanner from '../components/CookieBanner';
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -30,6 +32,7 @@ export default function RootLayout({ children }) {
         {children}
         <StickyActionBar />
         <WhatsappButton />
+        <CookieBanner />
       </body>
     </html>
   );
