@@ -1,0 +1,18 @@
+# Dependências do Node (NUNCA sobem pro GitHub)
+/node_modules
+/.pnpm-store
+
+# Arquivos de Build do Next.js
+/.next/
+/out/
+
+# Arquivos de Variáveis de Ambiente (CHAVES SECRETAS QUE NUNCA DEVEM VAZAR)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de sistema
+.DS_Store
+*.log
