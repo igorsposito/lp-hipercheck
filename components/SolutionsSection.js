@@ -1,3 +1,7 @@
+'use client';
+
+import TechCanvas from './TechCanvas';
+
 export default function SolutionsSection() {
   const whatsappNumber = '5577998381190';
 
@@ -75,6 +79,8 @@ export default function SolutionsSection() {
 
   return (
     <section id="solucoes" className="solutions-section">
+      <TechCanvas />
+
       <div className="solutions-container">
         <div className="section-header">
           <span className="badge">Nossas Soluções</span>

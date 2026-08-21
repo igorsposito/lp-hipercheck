@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Footer from '../../components/Footer';
 
 export default function TrabalheConosco() {
@@ -31,8 +32,16 @@ export default function TrabalheConosco() {
     <>
       <main className="careers-page">
         
-        {/* BANNER PRINCIPAL (HERO DE CARREIRAS) */}
+        {/* BANNER PRINCIPAL (HERO DE CARREIRAS COM IMAGEM DE FUNDO) */}
         <section className="careers-hero">
+          <Image 
+            src="/assets/img/trabalhe-conosco-banner.jpg" 
+            alt="Equipe Hiper Check" 
+            fill
+            priority
+            className="careers-hero-bg"
+          />
+          <div className="careers-hero-overlay"></div>
           <div className="careers-hero-content">
             <span className="badge-careers">CARREIRAS HIPER CHECK</span>
             <h1>Construa sua carreira com quem é referência em Inteligência de Crédito</h1>

@@ -409,12 +409,17 @@ body {
 .solutions-section {
   padding: 6rem 0;
   background-color: var(--bg-offset);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Garante que o container e os cards fiquem por cima do Canvas */
 .solutions-container {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .section-header {
@@ -907,16 +912,32 @@ body {
 }
 
 .careers-hero {
-  background: linear-gradient(135deg, #1A498A 0%, #0A192F 100%);
-  color: #FFFFFF;
-  padding: 6rem 0 5rem;
-  text-align: center;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 1rem;
 }
 
 .careers-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
   max-width: 800px;
-  margin: 0 auto;
-  width: 90%;
+}
+.careers-hero-bg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.careers-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.75) 0%, rgba(10, 25, 47, 0.88) 100%);
+  z-index: 2;
 }
 
 .badge-careers {
@@ -929,18 +950,33 @@ body {
   letter-spacing: 1px;
 }
 
-.careers-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 1.25rem 0;
+.careers-hero-content h1 {
+  color: #FFFFFF !important;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Garante leitura perfeita */
 }
 
-.careers-hero p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
+.careers-hero-content p {
+  color: #F1F5F9 !important;
+  font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  max-width: 680px;
+  margin: 0 auto 1.5rem auto;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.careers-hero-content .badge-careers {
+  background-color: var(--color-pink, #E80070);
+  color: #FFFFFF !important;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .btn-careers-hero {
