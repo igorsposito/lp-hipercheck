@@ -30,11 +30,11 @@ export default function Footer() {
         <div className="footer-links reveal reveal-delay-1">
           <h4>LINKS ÚTEIS</h4>
           <ul>
-            <li><a href="https://servicos.receita.fazenda.gov.br" target="_blank" rel="noopener noreferrer">Situação Cadastral CPF</a></li>
-            <li><a href="https://solucoes.receita.fazenda.gov.br" target="_blank" rel="noopener noreferrer">Situação Cadastral CNPJ</a></li>
+            <li><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="_blank" rel="noopener noreferrer">Situação Cadastral CPF</a></li>
+            <li><a href="https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/" target="_blank" rel="noopener noreferrer">Situação Cadastral CNPJ</a></li>
             <li><a href="http://www.sintegra.gov.br/" target="_blank" rel="noopener noreferrer">Sintegra</a></li>
             <li><a href="https://www.serasaexperian.com.br/lgpd" target="_blank" rel="noopener noreferrer">LGPD Serasa Experian</a></li>
-            <li><a href="/politica-de-cookies" target="_blank" rel="noopener noreferrer">Política de Cookies</a></li>
+            <li><a href="/politica-de-cookies" rel="noopener noreferrer">Política de Cookies</a></li>
           </ul>
         </div>
 
@@ -43,9 +43,9 @@ export default function Footer() {
           <h4>OUTROS CONTEÚDOS</h4>
           <ul>
             <li><Link href="/trabalhe-conosco">Trabalhe Conosco</Link></li>
-            <li><a href="https://google.com" target="_blank" rel="noopener noreferrer">Nos Avalie no Google</a></li>
-            <li><Link href="https://www.google.com/maps/place/Hiper+Check+do+Brasil/data=!4m2!3m1!1s0x0:0x66f665d58517847f?sa=X&ved=1t:2428&ictx=111">Onde Estamos</Link></li>
-            <li><a href="https://wa.me/5577998381190" target="_blank" rel="noopener noreferrer">Indique e Ganhe</a></li>
+            <li><a href="https://g.page/r/CX-EF4XVZfZmEBM/review" target="_blank" rel="noopener noreferrer">Nos Avalie no Google</a></li>
+            <li><a href="https://www.google.com/maps/place/Hiper+Check+do+Brasil/data=!4m2!3m1!1s0x0:0x66f665d58517847f?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer"> Onde Estamos</a></li>
+            <li><a href={`https://wa.me/5577998381190?text=${encodeURIComponent('Olá, gostaria de indicar um cliente para a Hiper Check!')}`} target="_blank" rel="noopener noreferrer">Indique e Ganhe</a></li>
             <li><a href="https://www.reclameaqui.com.br/empresa/hipercheck/" target="_blank" rel="noopener noreferrer">Reclame Aqui</a></li>
           </ul>
         </div>

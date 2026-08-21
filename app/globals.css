@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -28,6 +29,12 @@ body {
   color: var(--color-black);
   line-height: 1.5;
   padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
 }
 
 /* NAVBAR FIXA */
@@ -1370,14 +1377,27 @@ body {
   transform: translateY(-1px);
 }
 
+.footer-site,
+.footer-site .reveal,
+.footer-site .footer-brand,
+.footer-site .footer-links,
+.footer-site .footer-socials {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 /* PÁGINA TRABALHE CONOSCO (DESIGN CARREIRAS INSTITUCIONAL) */
 .careers-page {
   background-color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .careers-hero {
   position: relative;
-  min-height: 400px;
+  min-height: 450px; /* Garante uma altura sólida para o Hero */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1542,7 +1562,7 @@ body {
 
 /* FORMULÁRIO CENTRALIZADO DE RH */
 .careers-form-section {
-  padding: 4rem 0 6rem;
+  padding: 4rem 0 12rem !important; /* Aumentado para 12rem na base para garantir espaço total do footer flutuante */
   background-color: #FFFFFF;
   border-top: 1px solid #E2E8F0;
 }
