@@ -29,13 +29,13 @@ export default function ContactSection() {
         
         {/* LADO ESQUERDO */}
         <div className="contact-info">
-          <span className="badge">Seja Nosso Cliente</span>
-          <h2>Acelere os resultados da sua empresa com inteligência de crédito</h2>
-          <p>
+          <span className="badge reveal">Seja Nosso Cliente</span>
+          <h2 className="reveal reveal-delay-1">Acelere os resultados da sua empresa com inteligência de crédito</h2>
+          <p className="reveal reveal-delay-2">
             Preencha o formulário ao lado ou entre em contato direto para receber uma consultoria personalizada de nossas soluções Serasa Experian.
           </p>
           
-          <div className="contact-direct">
+          <div className="contact-direct reveal reveal-delay-3">
             <div className="direct-item">
               <strong>Atendimento Comercial:</strong>
               <span>(77) 99838-1190</span>
@@ -45,10 +45,17 @@ export default function ContactSection() {
               <span>Segunda a Sexta, das 08h às 18h</span>
             </div>
           </div>
+
+          {/* BLOCOS ILUSTRATIVOS BRANDING SERASA EXPERIAN */}
+          <div className="serasa-shapes reveal reveal-delay-3" aria-hidden="true">
+            <div className="shape shape-blue"></div>
+            <div className="shape shape-pink"></div>
+            <div className="shape shape-purple"></div>
+          </div>
         </div>
 
-        {/* LADO DIREITO (FORMULÁRIO EXACTO) */}
-        <div className="contact-form-wrapper">
+        {/* LADO DIREITO (FORMULÁRIO) */}
+        <div className="contact-form-wrapper reveal reveal-delay-2">
           <form onSubmit={handleSubmit} className="contact-form">
             <h3>Fale com um Especialista</h3>
             

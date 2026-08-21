@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-container">
         
         {/* LOGO E REDES */}
-        <div className="footer-brand">
+        <div className="footer-brand reveal">
           <div className="brand-logos">
             <Image 
               src="/assets/img/logo-branca.png" 
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         {/* LINKS ÚTEIS */}
-        <div className="footer-links">
+        <div className="footer-links reveal reveal-delay-1">
           <h4>LINKS ÚTEIS</h4>
           <ul>
             <li><a href="https://servicos.receita.fazenda.gov.br" target="_blank" rel="noopener noreferrer">Situação Cadastral CPF</a></li>
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* OUTROS CONTEÚDOS */}
-        <div className="footer-links">
+        <div className="footer-links reveal reveal-delay-2">
           <h4>OUTROS CONTEÚDOS</h4>
           <ul>
             <li><Link href="/trabalhe-conosco">Trabalhe Conosco</Link></li>
@@ -54,6 +54,7 @@ export default function Footer() {
 
       <div className="footer-bottom-line"></div>
 
+      {/* REMOVIDAS AS CLASSES REVEAL DAQUI PARA APARECER DIRETO */}
       <div className="footer-bottom-container">
         <div className="footer-legal">
           <p>Copyright © 2026 · HIPER CHECK DO BRASIL INFORMACOES CADASTRAIS LTDA | CNPJ: 14.438.607/0001-62</p>

@@ -47,10 +47,10 @@ export default function HeroCarousel() {
             <div key={index} className="carousel-slide" style={{ minWidth: '100%' }}>
               <div className="hero-content">
                 <div className="hero-text">
-                  <span className="badge">{slide.badge}</span>
-                  <h1>{slide.title}</h1>
-                  <p>{slide.description}</p>
-                  <div className="hero-buttons">
+                  <span className="badge reveal">{slide.badge}</span>
+                  <h1 className="reveal reveal-delay-1">{slide.title}</h1>
+                  <p className="reveal reveal-delay-2">{slide.description}</p>
+                  <div className="hero-buttons reveal reveal-delay-3">
                     <Link href={slide.btnPrimaryLink} className="btn-primary">
                       {slide.btnPrimaryText}
                     </Link>
@@ -61,7 +61,7 @@ export default function HeroCarousel() {
                     )}
                   </div>
                 </div>
-                <div className="hero-image">
+                <div className="hero-image reveal reveal-delay-2">
                   <Image 
                     src={slide.image} 
                     alt={slide.title} 

@@ -102,20 +102,23 @@ export default function SolutionsSection() {
 
       <div className="solutions-container">
         <div className="section-header">
-          <span className="badge">Nossas Soluções</span>
-          <h2>
+          <span className="badge reveal">Nossas Soluções</span>
+          <h2 className="reveal reveal-delay-1">
             Inteligência de crédito e dados Serasa Experian para{' '}
             <span className={`dynamic-word ${fade ? 'fade-in' : 'fade-out'}`}>
               {words[currentWordIndex]}
             </span>{' '}
             o seu negócio
           </h2>
-          <p>Da análise inicial ao monitoramento contínuo: ferramentas completas para conceder crédito com segurança e recuperar valores em atraso.</p>
+          <p className="reveal reveal-delay-2">Da análise inicial ao monitoramento contínuo: ferramentas completas para conceder crédito com segurança e recuperar valores em atraso.</p>
         </div>
 
         <div className="solutions-grid">
           {solutions.map((item, index) => (
-            <div key={index} className="solution-card">
+            <div 
+              key={index} 
+              className={`solution-card reveal reveal-delay-${(index % 3) + 1}`}
+            >
               <div className="card-icon">{item.icon}</div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
