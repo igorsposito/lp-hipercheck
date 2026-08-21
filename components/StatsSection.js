@@ -8,9 +8,9 @@ export default function StatsSection() {
 
   const stats = [
     { prefix: '+', value: 1600, label: 'Empresas atendidas', sub: 'Total de clientes atendidos' },
-    { prefix: '+R$ ', value: 11239258, isCurrency: true, label: 'Recuperados', sub: 'Em valores de carteiras atendidas' },
+    { prefix: 'R$ ', value: 11239258, isCurrency: true, label: 'Recuperados', sub: 'Em valores de carteiras atendidas' },
     { prefix: '+', value: 30000, label: 'Consultas por mês', sub: 'Decisões de crédito mais seguras' },
-    { prefix: '+', value: 15, suffix: ' anos', label: 'De mercado', sub: 'Experiência para apoiar seu negócio' },
+    { prefix: '', value: 15, suffix: ' anos', label: 'De mercado', sub: 'Experiência para apoiar seu negócio' },
   ];
 
   useEffect(() => {
@@ -31,8 +31,23 @@ export default function StatsSection() {
 
   return (
     <section ref={sectionRef} className="stats-section">
+      
+      {/* SHAPES SERASA EM OUTLINE (CANTO ESQUERDO) */}
+      <div className="stats-shapes shapes-left" aria-hidden="true">
+        <div className="outline-shape shape-blue"></div>
+        <div className="outline-shape shape-pink"></div>
+        <div className="outline-shape shape-purple"></div>
+      </div>
+
+      {/* SHAPES SERASA EM OUTLINE (CANTO DIREITO) */}
+      <div className="stats-shapes shapes-right" aria-hidden="true">
+        <div className="outline-shape shape-blue"></div>
+        <div className="outline-shape shape-pink"></div>
+        <div className="outline-shape shape-purple"></div>
+      </div>
+
       <div className="stats-header reveal">
-        <span className="stats-badge">EMPRESAS PROTEGIDAS</span>
+        <span className="stats-badge">— EMPRESAS PROTEGIDAS</span>
         <h2>
           Empresas que vendem a prazo usam a Hiper Check para <span className="highlight-pink">proteger o caixa.</span>
         </h2>

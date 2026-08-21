@@ -1437,10 +1437,11 @@ body {
 
 /* SEÇÃO DE ESTATÍSTICAS / AUTORIDADE */
 .stats-section {
-  background-color: var(--color-primary, #0f4c81);
-  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #072340 0%, #0f4c81 60%, #135997 100%);
+  padding: 4.5rem 2rem;
   color: #ffffff;
   position: relative;
+  overflow: hidden;
   z-index: 2;
 }
 
@@ -1544,5 +1545,73 @@ body {
 @media (max-width: 600px) {
   .stat-number {
     font-size: 1.9rem;
+  }
+}
+/* SHAPES OUTLINE SERASA (MAIORES E NAS DUAS PONTAS) */
+.stats-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-shapes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 260px; /* Largura expandida para abrigar shapes maiores */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shapes-left {
+  left: 0;
+}
+
+.shapes-right {
+  right: 0;
+  transform: scaleX(-1); /* Espelha os blocos perfeitamente no lado direito */
+}
+
+.outline-shape {
+  position: absolute;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid currentColor; /* Borda um pouco mais espessa para destacar */
+}
+
+/* SHAPES ESQUERDOS (MAIORES) */
+.shapes-left .shape-blue {
+  width: 150px;
+  height: 150px;
+  top: -30px;
+  left: -20px;
+  color: rgba(0, 240, 255, 0.35); /* Cyan */
+}
+
+.shapes-left .shape-pink {
+  width: 120px;
+  height: 120px;
+  top: 70px;
+  left: -50px;
+  color: rgba(230, 0, 126, 0.45); /* Rosa Serasa */
+}
+
+.shapes-left .shape-purple {
+  width: 70px;
+  height: 70px;
+  top: 210px;
+  left: 20px;
+  color: rgba(181, 95, 230, 0.4); /* Roxo */
+}
+
+/* ESCONDE EM TELAS MENORES PARA NÃO SOBREPOR O CONTEÚDO */
+@media (max-width: 1200px) {
+  .stats-shapes {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats-shapes {
+    display: none;
   }
 }
