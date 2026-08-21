@@ -52,11 +52,11 @@ export default function Navbar() {
               </svg>
             </button>
             <div className="dropdown-menu">
-              <a href="URL_DO_PORTAL_HIPER_CHECK" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+              <a href="https://hipercheck.com.br/cliente/users/login" target="_blank" rel="noopener noreferrer" className="dropdown-item">
                 <strong>Portal Hiper Check</strong>
                 <span>Consultas e Negativações</span>
               </a>
-              <a href="URL_DO_PORTAL_SERASA" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+              <a href="https://empresas.serasaexperian.com.br/meus-produtos/login" target="_blank" rel="noopener noreferrer" className="dropdown-item">
                 <strong>Portal Serasa Experian</strong>
                 <span>Consultas</span>
               </a>
