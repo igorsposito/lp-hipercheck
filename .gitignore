@@ -16,3 +16,10 @@
 # Arquivos de sistema
 .DS_Store
 *.log
+
+# Arquivos de editores e logs adicionais
+.vscode/
+.idea/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
