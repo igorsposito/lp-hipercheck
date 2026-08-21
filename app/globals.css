@@ -1167,3 +1167,114 @@ body {
     transform: translateY(0);
   }
 }
+
+/* PÁGINAS LEGAIS / POLÍTICA DE COOKIES */
+.legal-page-container {
+  padding-top: 100px;
+  background-color: #F8FAFC;
+  min-height: 100vh;
+}
+
+.legal-header {
+  background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
+  color: #FFFFFF;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.badge-legal {
+  background-color: rgba(232, 0, 112, 0.15);
+  color: #E80070;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.legal-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-header p {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+.legal-content {
+  max-width: 900px;
+  margin: -40px auto 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.legal-card {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+}
+
+.legal-card h2 {
+  font-size: 1.3rem;
+  color: #0F172A;
+  margin-bottom: 1rem;
+}
+
+.legal-card p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.cookie-types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cookie-type-box {
+  background: #F8FAFC;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+
+.cookie-type-box i {
+  font-size: 1.5rem;
+  color: #E80070;
+  margin-bottom: 0.75rem;
+}
+
+.cookie-type-box h3 {
+  font-size: 1rem;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.cookie-type-box p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.browser-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  color: #475569;
+}
+
+.browser-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #FFF5F9 0%, #FFFFFF 100%);
+  border: 1px solid rgba(232, 0, 112, 0.2);
+}
