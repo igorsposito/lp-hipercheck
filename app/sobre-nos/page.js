@@ -12,7 +12,7 @@ export default function SobreNosPage() {
     {
       icon: '🤝',
       title: 'Parceria Oficial',
-      desc: 'Como Distribuidor Autorizado Serasa Experian, entregamos soluções oficiais com total respaldo do mercado.',
+      desc: 'Como Parceiro Autorizado Serasa Experian, entregamos soluções oficiais com total respaldo do mercado.',
     },
     {
       icon: '⚡',
@@ -38,7 +38,7 @@ export default function SobreNosPage() {
             Conectamos a sua empresa à inteligência de crédito mais avançada do mercado.
           </h1>
           <p>
-            Somos um Distribuidor Autorizado Serasa Experian dedicado a transformar a gestão de risco, análise de crédito e recuperação de dívidas para negócios de todos os portes.
+            Somos um Parceiro Autorizado Serasa Experian dedicado a transformar a gestão de risco, análise de crédito e recuperação de dívidas para negócios de todos os portes.
           </p>
         </div>
       </section>

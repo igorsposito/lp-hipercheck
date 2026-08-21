@@ -9,7 +9,7 @@ export default function AboutSection() {
           <span className="badge-about reveal">Conheça a Hiper Check</span>
           <h2 className="reveal reveal-delay-1">Sua parceira estratégica em inteligência e gestão de crédito</h2>
           <p className="reveal reveal-delay-2">
-            Como Distribuidor Autorizado Serasa Experian, oferecemos aos nossos clientes as mais avançadas soluções de consulta de crédito, gestão de inadimplência e análise de risco do mercado.
+            Como Parceiro Autorizado Serasa Experian, oferecemos aos nossos clientes as mais avançadas soluções de consulta de crédito, gestão de inadimplência e análise de risco do mercado.
           </p>
           <p className="reveal reveal-delay-2">
             Nosso compromisso é entregar agilidade, transparência e segurança para impulsionar o crescimento sustentável da sua empresa.
