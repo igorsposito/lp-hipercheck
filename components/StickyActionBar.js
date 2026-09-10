@@ -15,7 +15,6 @@ export default function StickyActionBar() {
       const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Se o topo do footer estiver aparecendo na tela, oculta a barra
       if (footerRect.top <= windowHeight) {
         setIsVisible(false);
       } else if (window.scrollY > 100) {
@@ -26,7 +25,7 @@ export default function StickyActionBar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Executa ao carregar para garantir o estado correto
+    handleScroll(); 
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

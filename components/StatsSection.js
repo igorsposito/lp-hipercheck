@@ -47,7 +47,6 @@ export default function StatsSection() {
       </div>
 
       <div className="stats-header reveal">
-        <span className="stats-badge">— EMPRESAS PROTEGIDAS</span>
         <h2>
           Empresas que vendem a prazo usam a Hiper Check para <span className="highlight-pink">proteger o caixa.</span>
         </h2>

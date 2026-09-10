@@ -54,11 +54,10 @@ export default function Footer() {
 
       <div className="footer-bottom-line"></div>
 
-      {/* REMOVIDAS AS CLASSES REVEAL DAQUI PARA APARECER DIRETO */}
       <div className="footer-bottom-container">
         <div className="footer-legal">
           <p>Copyright © 2026 · HIPER CHECK DO BRASIL INFORMACOES CADASTRAIS LTDA | CNPJ: 14.438.607/0001-62</p>
-          <p className="footer-address">Av. Frei Benjamim, nº 2427, 2º andar, salas 213, 214 e 215 - B. Brasil - Vitória da Conquista/BA - CEP: 44505-107</p>
+          <p className="footer-address">Av. Frei Benjamim, nº 2427, 2º andar, salas 213, 214 e 215 - B. Brasil - Vitória da Conquista/BA - CEP: 45051-075</p>
         </div>
 
         <div className="footer-credits">

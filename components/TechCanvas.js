@@ -84,9 +84,9 @@ export default function TechCanvas() {
 
       // Transição suave de Opacidade (Fade In ao mexer, Fade Out após 3s)
       if (isMouseActive) {
-        if (globalOpacity < 1) globalOpacity += 0.04; // Aparece suavemente
+        if (globalOpacity < 1) globalOpacity += 0.04; 
       } else {
-        if (globalOpacity > 0) globalOpacity -= 0.02; // Esmaece suavemente
+        if (globalOpacity > 0) globalOpacity -= 0.02; 
       }
 
       // Se estiver totalmente invisível, pula a renderização para economizar processamento

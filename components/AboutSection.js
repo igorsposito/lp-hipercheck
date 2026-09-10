@@ -23,7 +23,7 @@ export default function AboutSection() {
 
         <div className="about-highlights">
           <div className="highlight-card reveal reveal-delay-1">
-            <div className="highlight-number">+10 anos</div>
+            <div className="highlight-number">+15 anos</div>
             <div className="highlight-label">De experiência no mercado de crédito</div>
           </div>
           <div className="highlight-card reveal reveal-delay-2">
