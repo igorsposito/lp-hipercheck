@@ -16,7 +16,7 @@ export default function HeroSection() {
       primaryBtnLink: '#solucoes',
       secondaryBtnText: 'Falar com Consultor',
       secondaryBtnLink: 'https://wa.me/5577998381190',
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       badge: 'RECUPERAÇÃO DE ATIVOS',
