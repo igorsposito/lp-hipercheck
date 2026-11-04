@@ -179,8 +179,8 @@ main {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: calc(90vh - var(--nav-height));
-  min-height: 480px;
+  height: calc(100svh - var(--nav-height));
+  min-height: 600px;
   overflow: hidden;
   background-color: #072340;
 }

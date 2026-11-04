@@ -1,38 +1,116 @@
-import { Roboto } from 'next/font/google';
-import './globals.css';
-import './responsive.css';
-import Navbar from '../components/Navbar';
-import WhatsappButton from '../components/WhatsappButton';
-import StickyActionBar from '../components/StickyActionBar';
-import CookieBanner from '../components/CookieBanner';
+
+import { Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+import "./globals.css";
+import "./responsive.css";
+
+import Navbar from "../components/Navbar";
+import WhatsappButton from "../components/WhatsappButton";
+import StickyActionBar from "../components/StickyActionBar";
+import CookieBanner from "../components/CookieBanner";
 
 const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  display: 'swap',
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  display: "swap",
 });
 
+const siteUrl = "https://hipercheck.com.br";
+
+const siteTitle =
+  "Hiper Check | Soluções Serasa Experian para Empresas";
+
+const siteDescription =
+  "Consultas de CPF e CNPJ, análise de crédito, negativação e monitoramento empresarial. Conheça as soluções da Hiper Check, Parceiro Autorizado Serasa Experian.";
+
 export const metadata = {
-  title: 'Hiper Check | Parceiro Oficial Serasa Experian',
-  description: 'Análises de crédito rápidas, seguras e gestão de inadimplência para o seu negócio.',
+  metadataBase: new URL(siteUrl),
+
+  title: {
+    default: siteTitle,
+    template: "%s | Hiper Check",
+  },
+
+  description: siteDescription,
+
+  applicationName: "Hiper Check",
+
+  keywords: [
+    "Hiper Check",
+    "Hiper Check do Brasil",
+    "Serasa Experian",
+    "Parceiro Autorizado Serasa Experian",
+    "consulta CPF",
+    "consulta CNPJ",
+    "análise de crédito",
+    "negativação",
+    "monitoramento empresarial",
+    "proteção ao crédito",
+    "soluções de crédito para empresas",
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Hiper Check",
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hiper Check - Soluções de crédito e inteligência empresarial",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/og-image.png"],
+  },
+
+  category: "business",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={roboto.variable}>
       <head>
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
       </head>
+
       <body>
         <Navbar />
+
         {children}
+
         <StickyActionBar />
         <WhatsappButton />
         <CookieBanner />
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

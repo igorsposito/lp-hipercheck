@@ -1,25 +1,83 @@
-# Dependências do Node (NUNCA sobem pro GitHub)
-/node_modules
-/.pnpm-store
 
-# Arquivos de Build do Next.js
+# ==========================================
+# HIPER CHECK - GITIGNORE
+# Next.js / React / JavaScript
+# ==========================================
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+/.yarn/*
+!/.yarn/patches
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarn/versions
+
+# Next.js
 /.next/
 /out/
 
-# Arquivos de Variáveis de Ambiente (CHAVES SECRETAS QUE NUNCA DEVEM VAZAR)
+# Production builds
+/build
+/dist
+
+# Vercel
+.vercel
+
+# Environment variables
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
-# Arquivos de sistema
-.DS_Store
-*.log
-
-# Arquivos de editores e logs adicionais
-.vscode/
-.idea/
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Testing
+/coverage
+
+# TypeScript cache
+*.tsbuildinfo
+next-env.d.ts
+
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Local caches
+.cache/
+.turbo/
+```
+
+**Importante:** o `.gitignore` não remove automaticamente arquivos que já tenham sido versionados anteriormente.
+
+## 3. Conferir antes do commit
+
+Depois de criar os dois arquivos, execute no terminal:
+
+```bash
+git status
+```
+
+Confira se o `README.md` e o `.gitignore` aparecem entre as alterações e se não existem arquivos `.env` ou pastas `node_modules` sendo enviados.
+
+Depois, podemos rodar o build e fazer um único commit com **toda a responsividade, melhorias visuais e documentação**.
+
+E uma sugestão: antes de subir, vale conferir também se o projeto já tem o **Vercel Analytics e o Speed Insights** no `app/layout.js`, para deixarmos tudo pronto de uma vez. <MemoryCite />
