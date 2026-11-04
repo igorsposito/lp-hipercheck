@@ -31,7 +31,8 @@ const siteTitle =
 const siteDescription =
   "Consultas de CPF e CNPJ, análise de crédito, negativação e monitoramento empresarial. Conheça as soluções da Hiper Check, Parceiro Autorizado Serasa Experian.";
 
-const ogImage = `${siteUrl}/og-image.png`;
+const ogImage =
+  "https://lp-hipercheck.vercel.app/og-image.png";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
