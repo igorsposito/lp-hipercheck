@@ -18,13 +18,20 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const siteUrl = "https://hipercheck.com.br";
+// URL pública utilizada nos metadados.
+// Na Vercel, usa o domínio do deployment.
+// Fora da Vercel, utiliza o domínio oficial.
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://hipercheck.com.br";
 
 const siteTitle =
   "Hiper Check | Soluções Serasa Experian para Empresas";
 
 const siteDescription =
   "Consultas de CPF e CNPJ, análise de crédito, negativação e monitoramento empresarial. Conheça as soluções da Hiper Check, Parceiro Autorizado Serasa Experian.";
+
+const ogImage = `${siteUrl}/og-image.png`;
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -72,7 +79,7 @@ export const metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/og-image.png",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "Hiper Check - Soluções de crédito e inteligência empresarial",
@@ -84,7 +91,7 @@ export const metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og-image.png"],
+    images: [ogImage],
   },
 
   category: "business",
