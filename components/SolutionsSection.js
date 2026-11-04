@@ -49,16 +49,17 @@ export default function SolutionsSection() {
       ),
     },
     {
-      title: 'Infobusca',
-      description: 'Qualificação e localização de dados cadastrais para encontrar clientes e enriquecer sua base de informações.',
-      msg: 'Olá! Gostaria de saber mais sobre a solução Infobusca.',
-      icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      ),
-    },
+  title: 'Serasa Alerta',
+  description: 'Monitore alterações no perfil de crédito dos seus clientes e receba alertas sobre eventos relevantes para antecipar riscos.',
+  msg: 'Olá! Vim pelo site e gostaria de saber mais sobre a solução Serasa Alerta.',
+  icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+      <path d="M10 21h4" />
+      <circle cx="18" cy="5" r="3" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+},
     {
       title: 'Saúde do Seu Negócio',
       description: 'Monitoramento 24h com alertas em tempo real via SMS e e-mail para proteger o CNPJ da sua empresa contra fraudes.',
