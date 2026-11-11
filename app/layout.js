@@ -1,7 +1,5 @@
 
 import { Roboto } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 import "./responsive.css";
@@ -32,7 +30,7 @@ const siteDescription =
   "Consultas de CPF e CNPJ, análise de crédito, negativação e monitoramento empresarial. Conheça as soluções da Hiper Check, Parceiro Autorizado Serasa Experian.";
 
 const ogImage =
-  "https://lp-hipercheck.vercel.app/og-image.png";
+  "https://hipercheck.com.br/og-image.png";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -117,8 +115,6 @@ export default function RootLayout({ children }) {
         <WhatsappButton />
         <CookieBanner />
 
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

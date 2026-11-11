@@ -26,7 +26,7 @@ export default function sitemap() {
   ];
 
   return routes.map((route) => ({
-    url: `${siteUrl}${route.path}`,
+    url: `${siteUrl}${route.path}/`,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
